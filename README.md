@@ -1,5 +1,4 @@
 # CodeAlpha_NetworkSniffer
-# Basic Network Sniffer
 
 This project was developed as part of my Cyber Security Internship with CodeAlpha.
 
