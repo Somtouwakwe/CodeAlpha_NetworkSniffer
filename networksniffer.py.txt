@@ -1,0 +1,16 @@
+from scapy.all import sniff
+from scapy.layers.inet import IP
+
+# Function to process captured packets
+def packet_callback(packet):
+    if packet.haslayer(IP):
+        print("\n=== Packet Captured ===")
+        print(f"Source IP: {packet[IP].src}")
+        print(f"Destination IP: {packet[IP].dst}")
+        print(f"Protocol: {packet.proto}")
+        print(f"Packet Summary: {packet.summary()}")
+
+# Start sniffing packets
+print("Starting network sniffer...")
+
+sniff(prn=packet_callback, store=False, count=10)
